@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# ENVS
+
+export BAT_THEME="base16"
+export EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"
+export PAGER="most"
+export HISTSIZE=32768
+export HISTFILESIZE=32768

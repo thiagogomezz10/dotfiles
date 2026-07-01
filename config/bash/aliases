@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# ALIASES
+
+# Listing directories
+alias ls='eza -lh --icons --group-directories-first --sort extension --sort name'
+alias ll='eza -lha --icons --group-directories-first --sort extension --sort name'
+alias la='eza -a --icons --group-directories-first --sort extension --sort name'
+
+# Workflow
+alias v='$EDITOR'
+
+# System
+alias rm='gtrash put'
+alias remove='rm'
+
+# Utils
+alias lutil='curl -fsSL christitus.com/linux | sh'
+alias rsh='source ~/.bashrc'
