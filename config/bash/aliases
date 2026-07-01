@@ -3,12 +3,14 @@
 # ALIASES
 
 # Listing directories
-alias ls='eza -lh --icons --group-directories-first --sort extension --sort name'
-alias ll='eza -lha --icons --group-directories-first --sort extension --sort name'
-alias la='eza -a --icons --group-directories-first --sort extension --sort name'
+alias ls='eza -lh --icons --group-directories-first --sort name --sort extension'
+alias ll='eza -lha --icons --group-directories-first --sort name --sort extension'
+alias la='eza -a --icons --group-directories-first --sort name --sort extension'
 
 # Workflow
+alias ..='cd ..'
 alias v='$EDITOR'
+alias y='yazi'
 
 # System
 alias rm='gtrash put'

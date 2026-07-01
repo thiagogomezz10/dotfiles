@@ -2,9 +2,17 @@
 
 # ENVS
 
+# Bat theme
 export BAT_THEME="base16"
+
+# Editor
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
-export PAGER="most"
+
+# Color man pages with bat
+export MANROFFOPT="-c"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# History size
 export HISTSIZE=32768
 export HISTFILESIZE=32768
