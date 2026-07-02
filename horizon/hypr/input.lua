@@ -1,6 +1,7 @@
 -- INPUT SECTION
 hl.config({
     input = {
+        kb_layout = "us",
         kb_options = "compose:caps, altwin:swap_lalt_lwin"
     }
 })

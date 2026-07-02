@@ -1,3 +1,7 @@
+-----------------------
+---- LOOK AND FEEL ----
+-----------------------
+
 -- GENERAL SECTION
 hl.config({
     general = {
