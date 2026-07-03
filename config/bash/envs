@@ -16,3 +16,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # History size
 export HISTSIZE=32768
 export HISTFILESIZE=32768
+
+# Virsh
+export LIBVIRT_DEFAULT_URI=qemu:///system

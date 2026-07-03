@@ -7,5 +7,5 @@ hl.config({
 })
 
 -- Scroll nicely in the terminal.
-o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
+-- o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })
 

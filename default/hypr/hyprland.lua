@@ -1,11 +1,10 @@
--- Append the default config location in lua's scope
+-- Append horizon path to load custom modules
 package.path = os.getenv("HOME") .. "/dotfiles/horizon/hypr/?.lua;" .. package.path
 
 ------------------
 ---- MONITORS ----
 ------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
     output   = "",
     mode     = "1920x1080@100hz",
@@ -13,22 +12,15 @@ hl.monitor({
     scale    = "1",
 })
 
--------------------------------
----- ENVIRONMENT VARIABLES ----
--------------------------------
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
-
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
--------------------------------
-----    HORIZON CONFIG     ----
--------------------------------
-require("helpers")
+-- Load default modular config
 require("autostart")
 require("looknfeel")
 require("animations")
 require("input")
 require("keybindings")
 require("windows")
+
+hl.bind("SUPER + CTRL + T", hl.dsp.exec_cmd("~/dotfiles/horizon/scripts/restart-waybar.sh"))
