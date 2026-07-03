@@ -28,7 +28,13 @@ elif command -v fzf-share >/dev/null 2>&1; then
     source "$(fzf-share)/completion.bash"
 fi
 
+# Init spicetify
 if command -v spicetify >/dev/null 2>&1; then
     export PATH=$PATH:~/.spicetify
+fi
+
+# Init homebrew
+if command -v brew >/dev/null 2>&1; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 fi
 

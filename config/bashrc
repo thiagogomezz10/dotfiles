@@ -14,3 +14,4 @@ source ~/.config/bash/init
 # Source input binds
 [[ $- == *i* ]] && bind -f ~/.config/bash/input
 
+
