@@ -12,15 +12,6 @@ hl.window_rule({
     center = true
 })
 
-local suppressMaximizeRule = hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
-    name  = "suppress-maximize-events",
-    match = { class = ".*" },
-
-    suppress_event = "maximize",
-})
--- suppressMaximizeRule:set_enabled(false)
-
 hl.window_rule({
     -- Fix some dragging issues with XWayland
     name  = "fix-xwayland-drags",
@@ -33,4 +24,24 @@ hl.window_rule({
         pin        = false,
     },
     no_focus = true,
+})
+
+-- Spotify on workspace 7
+hl.window_rule({
+  name = "Spotify",
+  match = {
+    class = "spotify"
+  },
+  workspace = 7
+})
+
+-- Wiremix
+hl.window_rule({
+  name = "Wiremix",
+  match = {
+    class = "org.horizon.wiremix"
+  },
+  size = { "800", "600" },
+  center = true,
+  float = true
 })

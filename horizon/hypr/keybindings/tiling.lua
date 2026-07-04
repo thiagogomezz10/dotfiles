@@ -1,11 +1,12 @@
-require("keybindings.mainMod")
-
 local menu = "walker"
 
 -- SYSTEM ACTIONS
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+-- Restart apps
+hl.bind(mainMod .. " + CTRL + T", hl.dsp.exec_cmd("restart-waybar"))
+hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("restart-hyprpaper"))
 
 
 -- WINDOWS

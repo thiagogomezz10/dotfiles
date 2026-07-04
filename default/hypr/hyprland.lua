@@ -22,5 +22,3 @@ require("animations")
 require("input")
 require("keybindings")
 require("windows")
-
-hl.bind("SUPER + CTRL + T", hl.dsp.exec_cmd("~/dotfiles/horizon/scripts/restart-waybar.sh"))

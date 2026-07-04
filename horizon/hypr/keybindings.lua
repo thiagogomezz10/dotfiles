@@ -2,7 +2,7 @@
 ---- KEYBINDINGS ----
 ---------------------
 
-local mainMod = "SUPER" 
+mainMod = "SUPER" 
 
 require("keybindings.tiling")
 require("keybindings.media")

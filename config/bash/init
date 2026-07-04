@@ -2,14 +2,6 @@
 
 # INIT
 
-# Add ~/.local/bin to PATH
-if [[ -d "$HOME/.local/bin" ]]; then
-    case ":$PATH:" in
-        *":$HOME/.local/bin:"*) ;;
-        *) export PATH="$HOME/.local/bin:$PATH" ;;
-    esac
-fi
-
 # Init zoxide
 if command -v zoxide >/dev/null 2>&1; then
     eval "$(zoxide init bash)"
@@ -28,10 +20,6 @@ elif command -v fzf-share >/dev/null 2>&1; then
     source "$(fzf-share)/completion.bash"
 fi
 
-# Init spicetify
-if command -v spicetify >/dev/null 2>&1; then
-    export PATH=$PATH:~/.spicetify
-fi
 
 # Init homebrew
 if command -v brew >/dev/null 2>&1; then
