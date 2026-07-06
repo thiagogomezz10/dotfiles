@@ -131,7 +131,7 @@
     "format-icons": {
       "headphone": "",
       "headset": "",
-      "default": ["", "", ""]
+      "default": ["", "", " "]
     }
   },
   "group/tray-expander": {

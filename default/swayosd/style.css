@@ -3,15 +3,14 @@
 window {
   border-radius: 0;
   opacity: 0.97;
-  border: 2px solid @border-color;
-
+  border: 2px solid @progress;
   background-color: @background-color;
 }
 
 label {
   font-family: 'JetBrainsMono Nerd Font';
   font-size: 11pt;
-
+  font-weight: bold;
   color: @label;
 }
 
