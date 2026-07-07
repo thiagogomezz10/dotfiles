@@ -12,8 +12,8 @@ hl.window_rule({
 	center = true,
 })
 
+-- Fix some dragging issues with XWayland
 hl.window_rule({
-	-- Fix some dragging issues with XWayland
 	name = "fix-xwayland-drags",
 	match = {
 		class = "^$",
@@ -35,7 +35,7 @@ hl.window_rule({
 	workspace = 7,
 })
 
--- Wiremix
+-- Wiremix floating
 hl.window_rule({
 	name = "Wiremix",
 	match = {
@@ -53,4 +53,31 @@ hl.window_rule({
 		class = "org.kde.okular",
 	},
 	opacity = "1 override",
+})
+
+-- GAMES
+-- Modrinth app & Minecraft
+hl.window_rule({
+	name = "Modrinth App",
+	match = {
+		class = "modrinth-app|Minecraft.*",
+	},
+	workspace = 10,
+})
+-- Steam
+hl.window_rule({
+	name = "Steam",
+	match = {
+		class = "steam",
+	},
+	workspace = 10,
+})
+
+-- Windows & winboat
+hl.window_rule({
+	name = "Winboat",
+	match = {
+		class = "winboat|xfreerdp",
+	},
+	workspace = 9,
 })
