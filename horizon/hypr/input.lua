@@ -8,6 +8,3 @@ hl.config({
 		repeat_delay = 250,
 	},
 })
-
--- Scroll nicely in the terminal.
--- o.window("(Alacritty|kitty|foot)", { scroll_touchpad = 1.5 })

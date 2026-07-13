@@ -2,7 +2,7 @@
 ---- WINDOWS AND WORKSPACES ----
 --------------------------------
 
--- desktop portal
+-- Desktop Portal
 hl.window_rule({
 	name = "gtk-desktop-portal",
 	match = {
@@ -26,7 +26,7 @@ hl.window_rule({
 	no_focus = true,
 })
 
--- Spotify on workspace 7
+-- Spotify
 hl.window_rule({
 	name = "Spotify",
 	match = {
@@ -35,7 +35,7 @@ hl.window_rule({
 	workspace = 7,
 })
 
--- Wiremix floating
+-- Wiremix
 hl.window_rule({
 	name = "Wiremix",
 	match = {
@@ -46,13 +46,40 @@ hl.window_rule({
 	float = true,
 })
 
--- Okular (no transparency)
+-- Okular
 hl.window_rule({
 	name = "Okular",
 	match = {
 		class = "org.kde.okular",
 	},
 	opacity = "1 override",
+})
+
+-- Windows & winboat
+hl.window_rule({
+	name = "Winboat",
+	match = {
+		class = "winboat|xfreerdp",
+	},
+	workspace = 9,
+})
+
+-- Virtual Machines
+hl.window_rule({
+	name = "Virtual machines",
+	match = {
+		title = ".* on QEMU/KVM",
+	},
+	workspace = 8,
+})
+
+-- Discord
+hl.window_rule({
+	name = "Discord",
+	match = {
+		class = "discord",
+	},
+	workspace = 11,
 })
 
 -- GAMES
@@ -72,12 +99,11 @@ hl.window_rule({
 	},
 	workspace = 10,
 })
-
--- Windows & winboat
+-- Heroic
 hl.window_rule({
-	name = "Winboat",
+	name = "Heroic",
 	match = {
-		class = "winboat|xfreerdp",
+		class = "heroic",
 	},
-	workspace = 9,
+	workspace = 10,
 })

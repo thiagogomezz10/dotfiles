@@ -10,6 +10,7 @@ hl.bind(mainMod .. " + CTRL + RETURN", hl.dsp.exec_cmd("launch-terminal-tmux"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(music))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("launch-or-focus 'discord'"))
 
 -- Launch volume control
 hl.bind(mainMod .. " + CTRL + M", hl.dsp.exec_cmd("launch-or-focus-tui 'wiremix -v output'"))

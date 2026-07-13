@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+mdg() {
+  mkdir -p $1
+  if [ -d $1 ]; then
+    cd $1
+  fi
+}

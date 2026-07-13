@@ -6,10 +6,10 @@ package.path = os.getenv("HOME") .. "/dotfiles/horizon/hypr/?.lua;" .. package.p
 ------------------
 
 hl.monitor({
-    output   = "",
-    mode     = "1920x1080@100hz",
-    position = "auto",
-    scale    = "1",
+	output = "",
+	mode = "1920x1080@100hz",
+	position = "auto",
+	scale = "1",
 })
 
 hl.env("XCURSOR_SIZE", "24")
