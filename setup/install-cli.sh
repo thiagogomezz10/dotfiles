@@ -1,26 +1,59 @@
 #!/usr/bin/env bash
 
-# Check if exactly one argument is provided
-if [[ $# -ne 1 ]]; then
-  echo "Usage: $0 <arch|brew>" >&2
+pkg_manager="arch"
+install_deps=true
+
+usage() {
+  echo "Usage: $0 [-b] [-p arch|brew]" >&2
+}
+
+while getopts ":bp:" opt; do
+  case "$opt" in
+  b)
+    install_deps=false
+    ;;
+  p)
+    case "$OPTARG" in
+    arch | brew)
+      pkg_manager="$OPTARG"
+      ;;
+    *)
+      echo "Error: -p must be 'arch' or 'brew'" >&2
+      usage
+      exit 1
+      ;;
+    esac
+    ;;
+  :)
+    echo "Error: -$OPTARG requires an argument" >&2
+    usage
+    exit 1
+    ;;
+  \?)
+    echo "Error: Unknown flag -$OPTARG" >&2
+    usage
+    exit 1
+    ;;
+  esac
+done
+shift "$((OPTIND - 1))"
+
+if [[ $# -ne 0 ]]; then
+  echo "Error: Unexpected argument: $1" >&2
+  usage
   exit 1
 fi
 
-# Validate the argument
-case "$1" in
-arch | brew)
-  ;;
-*)
-  echo "Error: Argument must be either 'arch' or 'brew'" >&2
-  exit 1
-  ;;
-esac
+if [[ "$install_deps" == false ]]; then
+  echo "Skipping dependency installation."
+  exit 0
+fi
 
 # Determine the package manager command
-if [[ "$1" == "arch" ]]; then
-  pkg_manager="sudo pacman -S --noconfirm"
+if [[ "$pkg_manager" == "arch" ]]; then
+  pkg_manager_cmd=(sudo pacman -S --noconfirm)
 else
-  pkg_manager="brew install"
+  pkg_manager_cmd=(brew install)
 fi
 
 # Path to the package list file
@@ -32,10 +65,7 @@ if [[ ! -f "$pkgs_file" ]]; then
   exit 1
 fi
 
-# Read each package and install it
-export pkg_manager
-# shellcheck disable=SC2016
 mapfile -t packages < <(grep -v '^#' "$pkgs_file" | grep -v '^$')
-$pkg_manager "${packages[@]}"
+"${pkg_manager_cmd[@]}" "${packages[@]}"
 
 echo "Installation process completed."

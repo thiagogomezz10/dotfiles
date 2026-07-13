@@ -4,38 +4,55 @@
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Set defaults
-install_deps="y"
+install_deps=true
 pkg_manager="arch"
 
-# Parse arguments
-if [[ $# -ge 1 ]]; then
-  case "$1" in
-  y | n)
-    install_deps="$1"
-    ;;
-  *)
-    echo "Error: First argument must be 'y' or 'n'" >&2
-    exit 1
-    ;;
-  esac
-fi
+usage() {
+  echo "Usage: $0 [-b] [-p arch|brew]" >&2
+}
 
-if [[ $# -ge 2 ]]; then
-  case "$2" in
-  arch | brew)
-    pkg_manager="$2"
+# Parse flags
+while getopts ":bp:" opt; do
+  case "$opt" in
+  b)
+    install_deps=false
     ;;
-  *)
-    echo "Error: Second argument must be 'arch' or 'brew'" >&2
+  p)
+    case "$OPTARG" in
+    arch | brew)
+      pkg_manager="$OPTARG"
+      ;;
+    *)
+      echo "Error: -p must be 'arch' or 'brew'" >&2
+      usage
+      exit 1
+      ;;
+    esac
+    ;;
+  :)
+    echo "Error: -$OPTARG requires an argument" >&2
+    usage
+    exit 1
+    ;;
+  \?)
+    echo "Error: Unknown flag -$OPTARG" >&2
+    usage
     exit 1
     ;;
   esac
+done
+shift "$((OPTIND - 1))"
+
+if [[ $# -ne 0 ]]; then
+  echo "Error: Unexpected argument: $1" >&2
+  usage
+  exit 1
 fi
 
 # Install dependencies if requested
-if [[ "$install_deps" == "y" ]]; then
+if [[ "$install_deps" == true ]]; then
   echo "Installing dependencies using $pkg_manager..."
-  "$script_dir/install-cli.sh" "$pkg_manager" || {
+  "$script_dir/install-cli.sh" -p "$pkg_manager" || {
     echo "Failed to install dependencies" >&2
     exit 1
   }
