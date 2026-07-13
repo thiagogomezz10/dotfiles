@@ -33,17 +33,15 @@ if [[ ! -f "$pkgs_file" ]]; then
 fi
 
 # Read each package and install it
-while IFS= read -r pkg || [[ -n "$pkg" ]]; do
-  # Skip empty lines and comments (if any)
-  if [[ -z "$pkg" || "$pkg" =~ ^[[:space:]]*# ]]; then
-    continue
-  fi
-
-  echo "Installing $pkg..."
-  if ! $pkg_manager "$pkg"; then
-    echo "Warning: Failed to install $pkg" >&2
-    # Continue with next package
-  fi
-done <"$pkgs_file"
+export pkg_manager
+# shellcheck disable=SC2016
+cat "$pkgs_file" | grep -v '^[[:space:]]*#' | grep -v '^[[:space:]]*$' | xargs -d '\n' -n 1 bash -c '
+    pkg="$0"
+    echo "Installing $pkg..."
+    if ! "$pkg_manager" "$pkg"; then
+        echo "Warning: Failed to install $pkg" >&2
+        # Continue with next package
+    fi
+' {}
 
 echo "Installation process completed."
