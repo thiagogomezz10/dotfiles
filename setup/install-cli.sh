@@ -24,7 +24,7 @@ else
 fi
 
 # Path to the package list file
-pkgs_file="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/setup/packages/cli-pkgs"
+pkgs_file="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/packages/cli-pkgs"
 
 # Check if the package list file exists
 if [[ ! -f "$pkgs_file" ]]; then
