@@ -1,6 +1,6 @@
 add_newline = true
 command_timeout = 200
-format = "($custom.ssh_host)[$directory$git_branch$git_status]($style)$character"
+format = "[$hostname$directory$git_branch$git_status]($style)$character"
 
 [character]
 error_symbol = "[✗](bold cyan)"
@@ -34,11 +34,7 @@ renamed    = ""
 deleted    = ""
 
 # Only shown during SSH sessions
-[custom.ssh_host]
-description = "Display hostname when connected over SSH"
-command = "hostname -s"
-when = "test -n \"$SSH_CONNECTION\""
-format = "[$symbol$output]($style) "
-symbol = "󰣀 "
-style = "bold blue"
-shell = ["sh"]
+[hostname]
+ssh_only = true
+ssh_symbol = "🌎"
+format = "[$symbol]($style) "
