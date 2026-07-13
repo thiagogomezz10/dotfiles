@@ -35,13 +35,7 @@ fi
 # Read each package and install it
 export pkg_manager
 # shellcheck disable=SC2016
-cat "$pkgs_file" | grep -v '^[[:space:]]*#' | grep -v '^[[:space:]]*$' | xargs -d '\n' -n 1 bash -c '
-    pkg="$0"
-    echo "Installing $pkg..."
-    if ! "$pkg_manager" "$pkg"; then
-        echo "Warning: Failed to install $pkg" >&2
-        # Continue with next package
-    fi
-' {}
+mapfile -t packages < <(grep -v '^#' "$pkgs_file" | grep -v '^$')
+$pkg_manager "${packages[@]}"
 
 echo "Installation process completed."
