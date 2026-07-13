@@ -37,4 +37,5 @@ deleted    = ""
 [hostname]
 ssh_only = true
 ssh_symbol = "🌎"
-format = "[$symbol]($style) "
+format = "[$ssh_symbol]($style) "
+style = "bold purple"
