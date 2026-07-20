@@ -5,15 +5,8 @@
   "spacing": 0,
   "height": 32,
   "width": 0,
-  "include": [
-    "~/.local/share/dotfiles/horizon/waybar/modules.jsonc"
-  ],
+  "include": ["~/.local/share/dotfiles/horizon/waybar/modules.jsonc"],
   "modules-left": ["custom/menu", "hyprland/workspaces"],
   "modules-center": ["clock#horizontal", "clock#vertical"],
-  "modules-right": [
-    "group/tray-expander",
-    "network",
-    "pulseaudio",
-    "cpu",
-  ],
+  "modules-right": ["group/tray-expander", "network", "pulseaudio", "cpu"],
 }

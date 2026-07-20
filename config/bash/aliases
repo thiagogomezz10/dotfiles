@@ -19,7 +19,6 @@ alias glow='glow -p'
 # System
 alias rm='gtrash put'
 alias remove='rm'
-alias rip='expac --timefmt="%Y-%m-%d %T" "%l\t%n %v" | sort | tail -200 | nl' # Recently installed packages
 
 # Utils
 alias lutil='curl -fsSL christitus.com/linux | sh'

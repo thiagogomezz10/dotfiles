@@ -15,26 +15,26 @@
       "9": "",
       "10": "",
       "11": "",
-      "active": "󱓻"
+      "active": "󱓻",
     },
     "persistent-workspaces": {
       "1": [],
       "2": [],
       "3": [],
       "4": [],
-      "5": []
-    }
+      "5": [],
+    },
   },
   "custom/menu": {
     "format": "<span font='JetBrains Mono Nerd Font'>\udb82\udcc7 </span>",
     "on-click": "walker",
-    "tooltip-format": "Menu"
+    "tooltip-format": "Menu",
   },
   "cpu": {
     "interval": 5,
     "format": "󰍛",
     "on-click": "omarchy-launch-or-focus-tui btop",
-    "on-click-right": "alacritty"
+    "on-click-right": "alacritty",
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
@@ -47,19 +47,19 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
+    "on-click": "omarchy-launch-wifi",
   },
   "clock#horizontal": {
     "format": "{:L%A %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
-    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select",
   },
   "clock#vertical": {
     "format": "{:%H\n  —\n%M}",
     "format-alt": "{:L%d %B W%V %Y}",
     "tooltip": false,
-    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select",
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -71,20 +71,20 @@
     "format-icons": {
       "headphone": "",
       "headset": "",
-      "default": ["", "", " "]
-    }
+      "default": ["", "", " "],
+    },
   },
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 600,
-      "children-class": "tray-group-item"
+      "children-class": "tray-group-item",
     },
-    "modules": ["group/expand-icons", "tray"]
+    "modules": ["group/expand-icons", "tray"],
   },
   "group/expand-icons": {
     "orientation": "inherit",
-    "modules": ["custom/expand-icon#horizontal", "custom/expand-icon#vertical"]
+    "modules": ["custom/expand-icon#horizontal", "custom/expand-icon#vertical"],
   },
   "custom/expand-icon#horizontal": {
     "format": "",
@@ -92,7 +92,7 @@
     "on-scroll-up": "",
     "on-scroll-down": "",
     "on-scroll-left": "",
-    "on-scroll-right": ""
+    "on-scroll-right": "",
   },
   "custom/expand-icon#vertical": {
     "format": "",
@@ -101,10 +101,10 @@
     "on-scroll-up": "",
     "on-scroll-down": "",
     "on-scroll-left": "",
-    "on-scroll-right": ""
+    "on-scroll-right": "",
   },
   "tray": {
     "icon-size": 12,
-    "spacing": 17
-  }
+    "spacing": 17,
+  },
 }
